@@ -78,7 +78,7 @@ app.get("/auth/callback", async (req, res) => {
     { upsert: true }
   );
 
-  res.send("Discord login successful. Backend is working.");
+  res.redirect(`${process.env.FRONTEND_URL}/guilds?uid=${user.id}`);
 });
 
 /* ===============================
